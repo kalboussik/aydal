@@ -43,6 +43,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.05}
 
 /* header */
 header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.4s;padding:22px 0}
+header::before{content:"";position:absolute;inset:0 0 auto 0;height:150px;background:linear-gradient(180deg,rgba(5,5,7,.66),rgba(5,5,7,0));pointer-events:none;z-index:-1;transition:opacity .4s}
+header.scrolled::before{opacity:0}
 header.scrolled{background:rgba(8,8,9,.86);backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid var(--hair)}
 .nav{display:flex;align-items:center;justify-content:space-between}
 .mark{font-family:var(--serif);font-size:22px;letter-spacing:.34em;padding-left:.34em;color:var(--ink)}
@@ -67,7 +69,7 @@ header.scrolled{background:rgba(8,8,9,.86);backdrop-filter:blur(12px);padding:14
 .hero .eyebrow{color:#F4EEE1;text-shadow:0 1px 18px rgba(0,0,0,.6)}
 .hero-h1{margin:10px 0 12px}
 .hero-logo{display:block;width:min(560px,82vw);height:auto;margin:0 auto;filter:drop-shadow(0 8px 30px rgba(0,0,0,.6))}
-.mark-img{height:44px;width:auto;display:block;filter:drop-shadow(0 2px 12px rgba(0,0,0,.55));transition:.4s}
+.mark-img{height:44px;width:auto;display:block;filter:drop-shadow(0 0 1px rgba(0,0,0,.85)) drop-shadow(0 2px 5px rgba(0,0,0,.85)) drop-shadow(0 5px 20px rgba(0,0,0,.6));transition:.4s}
 header.scrolled .mark-img{height:37px}
 .fmark-img{height:50px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.45))}
 @media(max-width:960px){.mark-img{height:38px}.fmark-img{height:44px}}
